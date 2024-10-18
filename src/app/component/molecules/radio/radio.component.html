@@ -1,0 +1,55 @@
+<div class="container">
+	<div class="tabs">
+		<input 
+            type="radio" 
+            id="radio-1" 
+            name="tabs" 
+            value="transactions" 
+            [checked]="selectedTab === 'transactions'" 
+            (change)="onTabChange('transactions')">
+		<label class="tab" for="radio-1">Transacciones</label>
+		<input 
+            type="radio" 
+            id="radio-2" 
+            name="tabs" 
+            value="subscriptions" 
+            [checked]="selectedTab === 'subscriptions'" 
+            (change)="onTabChange('subscriptions')">
+		<label class="tab" for="radio-2">Subscripciones</label>
+	
+		<span class="glider"></span>
+	</div>
+</div>
+
+<div class="table-container" >
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Fondo</th>
+          <th>Monto</th> 
+          <th>
+            {{ selectedTab === 'transactions' ? 'Estado' : 'Cancelar' }}
+        </th>
+          <th>Fecha y Hora</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of subscribe">
+          <td class="fund-name">{{ item.fundName }}</td>
+          <td>{{ item.subscriptionAmount | currency }}</td>
+          <td>
+            <app-button *ngIf="selectedTab === 'subscriptions'"
+            nameButton="Cancelar"  
+            [fundId]="item.fundId" 
+            [userId]="item.userId" 
+            (buttonClick)="handleButtonClick($event)">
+          </app-button>
+          <div *ngIf="selectedTab === 'transactions'" [ngClass]="item.subscriptionType === 'CANCELLATION' ? 'type_cancelled' : 'type_subscribed'">
+                {{ item.subscriptionType === 'CANCELLATION' ? 'CANCELADO' : "ACTIVO" }}
+            </div>
+          </td>
+          <td>{{ item.dateTime | date: 'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

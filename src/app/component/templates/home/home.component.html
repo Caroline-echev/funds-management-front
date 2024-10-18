@@ -1,3 +1,9 @@
 <app-profile [user]="user"></app-profile>
 <app-menu [name]="user?.name"></app-menu>
-
+<app-radio 
+    [subscribe]="subscribe" 
+    [selectedTab]="selectedTab" 
+    (tabChange)="onTabChange($event)"
+    (buttonClick)="unsubscribe($event.fund, $event.userId, $event.notificationsEnabled)">
+>
+</app-radio>

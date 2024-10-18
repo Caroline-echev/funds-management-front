@@ -1,0 +1,136 @@
+
+.tabs {
+  display: flex;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 0 1px 0 rgba(#001D5F, 0.25), 0 6px 12px 0 rgba(#001D5F, 0.15);
+  padding: 0.75rem;
+  border-radius: 99px;
+  margin-left: 33%;
+  gap: 15px;
+  width: 245px;
+}
+
+.tabs * {
+  z-index: 2;
+}
+
+.container input[type="radio"] {
+  display: none;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: auto;
+  position: relative;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: 500;
+  border-radius: 99px;
+  cursor: pointer;
+  transition: color 0.15s ease-in;
+  margin-left: 10px;
+  z-index: 3; 
+}
+
+.container input[type="radio"]:checked + label {
+  color: #001D5F;
+  font-weight: bold; 
+  margin-left: 10px;
+  z-index: 4; /* Asegura que el texto seleccionado esté por encima */
+}
+
+.container input[type="radio"]:checked + label > .notification {
+  background-color: #001D5F;
+  color: #fff;
+  margin: 0px;
+}
+
+.container input[id="radio-1"]:checked ~ .glider {
+  transform: translateX(0);
+}
+
+.container input[id="radio-2"]:checked ~ .glider {
+  transform: translateX(100%);
+}
+
+.container input[id="radio-3"]:checked ~ .glider {
+  transform: translateX(200%);
+}
+
+.glider {
+  position: absolute;
+  display: flex;
+  height: 30px;
+  width: 120px;
+  background-color: #CBDEF770;
+  z-index: 1; 
+  border-radius: 99px;
+  transition: 0.25s ease-out;
+}
+
+@media (max-width: 700px) {
+  .tabs {
+      transform: scale(0.6);
+  }
+}
+
+  .table-container {
+    margin: 20px 0;
+    overflow-x: auto;
+    margin-left: 33%;
+    margin-right: 60px;
+    background-color: #fff;
+    border-radius: 15px;
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+  }
+  
+  .table th {
+    background-color: #CBDEF7;
+    font-weight: bold;
+    text-align: center; 
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .table td {
+    text-align: center;
+  }
+  tr{
+    color: #001D5F;
+  }
+  .fund-name{
+    color: #001D5F;
+    font-weight: bold;
+    
+  }
+  .type_cancelled{
+    color: #ffffff;
+    background-color: rgb(255, 1, 86);
+    padding: 5px;
+    border-radius: 20px;
+  }
+  .type_subscribed{
+    color: #ffffff;
+    background-color: rgb(39, 223, 100);
+    padding: 5px;
+    border-radius: 20px;
+  }
+  

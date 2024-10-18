@@ -1,6 +1,7 @@
 <nav class="nav"> 
     <img class="nav__logo" src="assets/images/Btg-logo-blue.svg" alt="Logo Btg">
     <img class="nav__perfil" src="assets/images/person-circle.svg" alt="Perfil">
+
     <ul class="nav__items">
         <li class="nav__li" routerLink="/home" routerLinkActive="active-router">
             <p class="nav__text">{{name}}</p>
@@ -8,5 +9,11 @@
         <li class="nav__li" routerLink="/library" routerLinkActive="active-router">
             <p class="nav__text">Fondos</p>
         </li>
-    </ul>
+    </ul>   
+    <p class="notification__text">Recibir Notificaciones</p>
+    <div class="notification">
+        <p class="email">EMAIL</p>
+        <app-checkbox></app-checkbox> 
+        <p class="sms">SMS</p>
+    </div>
 </nav>

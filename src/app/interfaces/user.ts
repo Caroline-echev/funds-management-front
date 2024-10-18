@@ -4,7 +4,15 @@ export interface UserResponse {
     email: string;
     phone: string;
     initialBalance: number;
-    dateOfBirth: string;  // LocalDateTime se maneja como string en JSON
+    dateOfBirth: string;  
     subscriptions: string[];
+  }
+  export interface SubscriptionResponse {
+    userId: string;
+    fundId: string;
+    fundName: string;
+    subscriptionAmount: number;
+    subscriptionType: string;
+    dateTime: Date;
   }
   

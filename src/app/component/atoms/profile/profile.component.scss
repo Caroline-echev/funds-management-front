@@ -1,9 +1,9 @@
 .profile {
     display: flex;
-    justify-content: space-between; /* Alinea los bloques de la izquierda y derecha */
+    justify-content: space-between;
     margin-left: 30%;
     padding: 20px 40px;
-    max-width: 800px; 
+   
 }
 
 .profile__left {
@@ -42,13 +42,20 @@
     flex-direction: column;
     align-items: flex-end;
     margin-top: 40px; 
+    position: relative;
+    margin-right: 30px;
+    background-color: #ffffff;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 25px;
+    
+    box-shadow: 0 0 1px 0 rgba(#001D5F, 0.25), 0 6px 12px 0 rgba(#001D5F, 0.15);
     
 }
 
 .profile__initialBalance-title {
     font-size: 16px;
     color: #001D5F;
-    text-align: left;
     
 }
 
@@ -56,7 +63,9 @@
     font-size: 35px;
     color: #ffffff;
     background-color: #001D5F;
-    padding: 10px;
-    border-radius: 10px;
+    box-shadow: 0 0 1px 0 rgba(#001D5F, 0.25), 0 6px 12px 0 rgba(#001D5F, 0.15);
+
+    padding: 15px;
+    border-radius: 25px;
     margin-top: 10px;
 }

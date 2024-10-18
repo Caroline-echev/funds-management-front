@@ -1,7 +1,7 @@
 .nav {
   display: flex; 
   flex-direction: column; 
-  align-items: center; /* Centra los elementos en el eje horizontal */
+  align-items: center; 
   width: 30%; 
   height: 100vh; 
   position: fixed; 
@@ -16,10 +16,10 @@
 }
 
 .nav__perfil {
-  width: 120px; /* Ajusta el tamaño según lo necesario */
-  height: 120px; /* Ajusta el tamaño según lo necesario */
-  margin-top: 25px; /* Espaciado superior para separar del logo */
-  margin-bottom: 20px; /* Espaciado inferior para separar del menú */
+  width: 120px; 
+  height: 120px; 
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .nav__items {
@@ -35,7 +35,7 @@
   justify-content: center;
   padding: 10px 0px; 
   margin-bottom: 10px;
-  border-radius: 10px; 
+  border-radius: 50px; 
   cursor: pointer;
   text-decoration: none;
   &:hover { 
@@ -48,7 +48,7 @@
 .active-router {
   background-color: #001D5F; 
   font-weight: bold;
-  border-radius: 10px; 
+  border-radius: 50px; 
   color: white; 
 }
 
@@ -56,4 +56,35 @@
   width: 16px;
   height: 16px;
   margin-right: 10px;
+}
+
+
+.notification {
+  display: flex; 
+  align-items: center; 
+}
+
+.sms, .email {
+  margin: 0 8px;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+  font-weight: bold;
+}
+.sms{
+  background-color:#001D5F; 
+  color: white;
+
+}
+.email {
+  background-color: #619df0;
+  color: white;
+}
+
+.notification__text{
+  font-size: 16px;
+  color: #001D5F;
+  font-weight: bold;
+
 }

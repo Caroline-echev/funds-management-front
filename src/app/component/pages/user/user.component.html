@@ -1,0 +1,22 @@
+<div *ngIf="user">
+    <h2>User Details</h2>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Phone:</strong> {{ user.phone }}</p>
+    <p><strong>Initial Balance:</strong> {{ user.initialBalance | currency }}</p>
+    <p><strong>Date of Birth:</strong> {{ user.dateOfBirth | date:'longDate' }}</p>
+  
+    <h3>Subscriptions</h3>
+    <ul>
+      <li *ngFor="let subscription of user.subscriptions">
+        {{ subscription }}
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Muestra un mensaje mientras se carga la información -->
+  <div *ngIf="!user">
+    <p>Loading user details...</p>
+  </div>
+  

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadioComponent } from './radio.component';
 import { ButtonModule } from '../../atoms/button/button.module';
+import { LoadingModule } from '../../atoms/loading/loading.module';
 
 
 
@@ -9,7 +10,8 @@ import { ButtonModule } from '../../atoms/button/button.module';
   declarations: [RadioComponent],
   imports: [
     CommonModule,
-    ButtonModule
+    ButtonModule,
+    LoadingModule
   ]
   ,exports: [RadioComponent]
 })

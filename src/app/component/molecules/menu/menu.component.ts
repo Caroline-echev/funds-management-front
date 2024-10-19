@@ -7,7 +7,6 @@ import { NotificationService } from 'src/app/services/notification.service';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent  {
-  @Input() name: string | undefined = '';
 
 
 }

@@ -11,6 +11,7 @@ export class ButtonComponent  {
   @Input() fundId: string | undefined; 
   @Input() userId: string | undefined; 
   @Output() buttonClick = new EventEmitter<{ fund: string | undefined, user: string | undefined }>(); 
+  @Input() className: string = "custom-cancel-button";
 
  
   onClick() {

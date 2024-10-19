@@ -20,8 +20,9 @@
 		<span class="glider"></span>
 	</div>
 </div>
+<app-loading *ngIf="isLoading"></app-loading>
 
-<div class="table-container" >
+<div *ngIf="!isLoading"  class="table-container" >
     <table class="table">
       <thead>
         <tr>
@@ -33,7 +34,7 @@
           <th>Fecha y Hora</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="scrollable-table">
         <tr *ngFor="let item of subscribe">
           <td class="fund-name">{{ item.fundName }}</td>
           <td>{{ item.subscriptionAmount | currency }}</td>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SubscriptionResponse, UserResponse } from 'src/app/interfaces/user';
 import { SubscriptionService } from 'src/app/services/subscription.service';
 import { UserService } from 'src/app/services/user.service';
+import { ErrorHandlerService } from 'src/app/services/error-handler.service'; // Importa el servicio
 
 @Component({
   selector: 'app-home',
@@ -17,13 +18,13 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    private subscriptionService: SubscriptionService
+    private subscriptionService: SubscriptionService,
+    private errorHandler: ErrorHandlerService // Inyecta el servicio
   ) {}
 
   ngOnInit(): void {
     this.getUserId(); 
     this.getTransactionsByUserId();
-
   }
 
   getUserId() {
@@ -72,7 +73,7 @@ export class HomeComponent implements OnInit {
     const isSMS = notificationsEnabled; 
     this.subscriptionService.unsubscribe(this.userId, fund || '', isSMS).subscribe(
       () => {
-        console.log(`Desuscripción exitosa para el fondo: ${fund}`);
+        this.errorHandler.handleSuccess(`Desuscripción exitosa`);
         this.getSubscriptionsByUserId();
         this.getUserId();
       },

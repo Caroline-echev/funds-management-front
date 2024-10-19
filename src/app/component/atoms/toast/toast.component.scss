@@ -1,0 +1,36 @@
+.toast {
+    position: fixed; 
+    top: 20px; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    color: white; 
+    padding: 15px 20px; 
+    border-radius: 5px;
+    z-index: 1000; 
+    transition: opacity 0.3s ease; 
+    opacity: 1; 
+  }
+  
+  .toast.ng-enter {
+    opacity: 0;
+  }
+  .toast.ng-enter-active {
+    opacity: 1;
+  }
+  .toast.ng-leave {
+    opacity: 1; 
+  }
+  .toast.ng-leave-active {
+    opacity: 0; 
+  }
+  
+  .error-toast {
+    background-color: #FF015670; 
+    color: white;
+  }
+  
+  .success-toast {
+    background-color: #27DF6470; 
+    color: white;
+  }
+  

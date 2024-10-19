@@ -6,7 +6,7 @@
   box-shadow: 0 0 1px 0 rgba(#001D5F, 0.25), 0 6px 12px 0 rgba(#001D5F, 0.15);
   padding: 0.75rem;
   border-radius: 99px;
-  margin-left: 33%;
+  margin-left: 22%;
   gap: 15px;
   width: 245px;
 }
@@ -81,7 +81,7 @@
   .table-container {
     margin: 20px 0;
     overflow-x: auto;
-    margin-left: 33%;
+    margin-left: 22%;
     margin-right: 60px;
     background-color: #fff;
     border-radius: 15px;
@@ -116,11 +116,7 @@
   tr{
     color: #001D5F;
   }
-  .fund-name{
-    color: #001D5F;
-    font-weight: bold;
-    
-  }
+
   .type_cancelled{
     color: #ffffff;
     background-color: rgb(255, 1, 86);
@@ -134,3 +130,7 @@
     border-radius: 20px;
   }
   
+  .scrollable-table {
+    max-height: 400px; /* Ajusta la altura máxima según lo necesario */
+    overflow-y: auto;  /* Activa el scroll vertical si el contenido supera la altura máxima */
+  }

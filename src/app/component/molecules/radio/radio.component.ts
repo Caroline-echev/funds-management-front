@@ -15,25 +15,28 @@ export class RadioComponent implements OnInit {
   @Output() buttonClick = new EventEmitter<{ userId: string | undefined; fund: string | undefined; notificationsEnabled: boolean }>(); 
   
   notificationsEnabled: boolean = false; 
+  isLoading: boolean = false; 
 
-
-  constructor(
-    private notificationService: NotificationService) { }
+  constructor(private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.notificationService.notificationsEnabled$.subscribe(enabled => {
       this.notificationsEnabled = enabled; 
-      console.log('Notificaciones habilitadas en Home:', this.notificationsEnabled);
     });
   }
 
   onTabChange(tab: string) {
+    this.isLoading = true;  
     this.selectedTab = tab; 
-    this.tabChange.emit(tab); 
+    this.tabChange.emit(tab);
+
+    setTimeout(() => {
+      this.isLoading = false; 
+    }, 1500);
   }
 
   handleButtonClick(event: { fund: string | undefined, user: string | undefined }) {
-    console.log('El botón ha sido presionado');
+  
     this.buttonClick.emit({ 
       userId: event.user, 
       fund: event.fund, 

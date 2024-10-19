@@ -3,13 +3,13 @@
         <p class="profile__name">{{ user?.name }}</p>
         <div class="profile__details">
             <div class="profile__info">
-                <p class="profile__email"><strong>Correo:</strong> {{ user?.email }}</p>
-                <p class="profile__phone"><strong>Contacto:</strong> {{ user?.phone }}</p>
+                <p class="profile__email"><strong>{{labels.EMAIL}}</strong> {{ user?.email }}</p>
+                <p class="profile__phone"><strong>{{labels.CONTACT}}</strong> {{ user?.phone }}</p>
             </div>
         </div>
     </div>
     <div class="profile__balance">
-        <p class="profile__initialBalance-title"><strong>Saldo:</strong></p>
+        <p class="profile__initialBalance-title"><strong>{{labels.BALANCE}}</strong></p>
         <p class="profile__initialBalance">{{ user?.initialBalance | currency }}</p>
     </div>
 </div>

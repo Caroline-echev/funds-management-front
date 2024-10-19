@@ -1,6 +1,7 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { SubscriptionResponse } from 'src/app/interfaces/user';
 import { NotificationService } from 'src/app/services/notification.service';
+import { SELECTED_TAD } from 'src/app/util/constants';
 
 @Component({
   selector: 'app-radio',
@@ -10,7 +11,7 @@ import { NotificationService } from 'src/app/services/notification.service';
 export class RadioComponent implements OnInit {
 
   @Input() subscribe: SubscriptionResponse[] | null = null; 
-  @Input() selectedTab: string = 'transactions'; 
+  @Input() selectedTab: string = SELECTED_TAD.TRANSLATIONS; 
   @Output() tabChange = new EventEmitter<string>(); 
   @Output() buttonClick = new EventEmitter<{ userId: string | undefined; fund: string | undefined; notificationsEnabled: boolean }>(); 
   

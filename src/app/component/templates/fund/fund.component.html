@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-<h2 class="fund__title">Fondos</h2>
+<h2 class="fund__title">{{labels.TITLE}}</h2>
 <app-loading *ngIf="isLoading"></app-loading>
 <app-form [data]="funds"></app-form>
 <div class="filter">
@@ -13,7 +13,7 @@
       <span>
         <svg width="12px" height="10px"></svg>
       </span>
-      <span>Filtrado por categoria</span>
+      <span>{{labels.FILTER}}</span>
     </label>
     <svg class="inline-svg">
       <symbol id="check-4" viewBox="0 0 12 10">
@@ -38,9 +38,9 @@
   <table  class="table">
     <thead>
       <tr>
-        <th (click)="sortBy('name')" [class.active]="orderByName">Nombre</th>
-        <th (click)="sortBy('minimumAmount')" [class.active]="!orderByName">Monto Mínimo</th>
-        <th>Categoría</th>
+        <th (click)="sortBy('name')" [class.active]="orderByName">{{labels.NAME}}</th>
+        <th (click)="sortBy('minimumAmount')" [class.active]="!orderByName">{{labels.MINIMUM_AMOUNT}}</th>
+        <th>{{labels.CATEGORY}}</th>
       </tr>
     </thead>
     <tbody>

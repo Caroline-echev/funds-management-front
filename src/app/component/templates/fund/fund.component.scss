@@ -153,6 +153,7 @@ td {
     line-height: 2em;
     font-weight: bold;
     color: #fff;
+    margin-right: 50px;
     position: absolute;
     top: 0;
     left: 0;
@@ -315,7 +316,7 @@ td {
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    margin-left: 22%;
-    margin-right: 60px;
-    align-items: flex-end;
+    margin-left: 72vw;
+    width: 350px;
+    align-items: center;
   }

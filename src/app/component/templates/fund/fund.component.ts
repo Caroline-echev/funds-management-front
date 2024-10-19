@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FundResponse } from 'src/app/interfaces/fund';
 import { FundService } from 'src/app/services/fund.service';
 import { NotificationService } from 'src/app/services/notification.service';
+import { EMPTY_STRING, FUND_LABELS } from 'src/app/util/constants';
 
 @Component({
   selector: 'app-fund-list',
@@ -18,6 +19,7 @@ export class FundComponent implements OnInit {
   isChecked = true;           
   filterByCategory: boolean = false; 
   notificationsEnabled: boolean = false;
+  labels = FUND_LABELS;
 
   constructor(private fundService: FundService, private notificationService: NotificationService) { }
 
@@ -30,13 +32,13 @@ export class FundComponent implements OnInit {
 
   toggleSwitch(event: Event) {
     this.isChecked = (event.target as HTMLInputElement).checked;
-    this.category = (this.isChecked ? 'FPV' : 'FIC');
+    this.category = (this.isChecked ? this.labels.TYPE_FPV : this.labels.TYPE_FIC);
     this.fetchFunds();
   }
 
   toggleFilterByCategory(event: Event) {
     this.filterByCategory = (event.target as HTMLInputElement).checked;
-    this.category = this.filterByCategory ? 'FPV' : '';
+    this.category = this.filterByCategory ? this.labels.TYPE_FPV : EMPTY_STRING;
     this.fetchFunds();
   }
 
@@ -49,8 +51,9 @@ export class FundComponent implements OnInit {
           this.isLoading = false; 
         }, 1500);
       },
+
       error: (err) => {
-        console.error('Error fetching funds', err);
+        console.error(this.labels.ERROR_GET_FUND, err);
         setTimeout(() => {
           this.isLoading = false; 
         }, 1500);
@@ -59,7 +62,7 @@ export class FundComponent implements OnInit {
   }
 
   sortBy(criteria: string): void {
-    this.orderByName = criteria === 'name';
+    this.orderByName = criteria === this.labels.SORT_BY_NAME;
     this.fetchFunds();
   }
 

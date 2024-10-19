@@ -2,7 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FundResponse } from 'src/app/interfaces/fund';
 import { NotificationService } from 'src/app/services/notification.service';
 import { SubscriptionService } from 'src/app/services/subscription.service';
-import { ErrorHandlerService } from 'src/app/services/error-handler.service'; // Importa el servicio
+import { ErrorHandlerService } from 'src/app/services/error-handler.service'; 
+import { DEFAULT_USER_ID, SUBSCRIPTION_MESSAGE } from 'src/app/util/constants';
 
 @Component({
   selector: 'app-form',
@@ -17,12 +18,12 @@ export class FormComponent implements OnInit {
   @Input() data: FundResponse[] = [];
   amount: number | null = null;
   notificationsEnabled = false;
-  userId = "67101e908a4bffcfb6b59c55"; 
-  
+  userId = DEFAULT_USER_ID; 
+  titleButton = SUBSCRIPTION_MESSAGE.TITLE_BUTTON;
   constructor(
     private subscriptionService: SubscriptionService, 
     private notificationService: NotificationService,
-    private errorHandler: ErrorHandlerService // Inyecta el servicio
+    private errorHandler: ErrorHandlerService 
   ) { }
 
   ngOnInit(): void {
@@ -36,14 +37,13 @@ export class FormComponent implements OnInit {
       const isSMS = this.notificationsEnabled; 
       this.subscriptionService.subscribe(this.userId, this.selectedItem.id, isSMS, this.amount).subscribe(
         () => {
-          this.errorHandler.handleSuccess(`Suscripción exitosa`);
+          this.errorHandler.handleSuccess(SUBSCRIPTION_MESSAGE.SUCCESS_MESSAGE);
           
-          // Limpia el combo box y el input
           this.selectedItem = undefined;
           this.amount = null;
         },
         (error: any) => {
-          console.error('Error durante la suscripción:', error);
+          console.error(SUBSCRIPTION_MESSAGE.ERROR_MESSAGE, error);
         }
       );
     }

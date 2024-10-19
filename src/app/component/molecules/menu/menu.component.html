@@ -4,16 +4,16 @@
 
     <ul class="nav__items">
         <a class="nav__li" routerLink="/home" routerLinkActive="active-router">
-            <p class="nav__text">Perfil</p>
+            <p class="nav__text">{{labels.PROFILE}}</p>
         </a>
         <a class="nav__li" routerLink="/fund" routerLinkActive="active-router">
-            <p class="nav__text">Fondos</p>
+            <p class="nav__text">{{labels.FUND}}</p>
         </a>
     </ul>   
-    <p class="notification__text">Recibir Notificaciones</p>
+    <p class="notification__text">{{labels.NOTIFICATIONS}}</p>
     <div class="notification">
-        <p class="email">EMAIL</p>
+        <p class="email">{{labels.EMAIL}}</p>
         <app-checkbox></app-checkbox> 
-        <p class="sms">SMS</p>
+        <p class="sms">{{labels.SMS}}</p>
     </div>
 </nav>

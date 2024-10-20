@@ -19,7 +19,7 @@ export class FormComponent implements OnInit {
   amount: number | null = null;
   notificationsEnabled = false;
   userId = DEFAULT_USER_ID; 
-  titleButton = SUBSCRIPTION_MESSAGE.TITLE_BUTTON;
+  titleButton = SUBSCRIPTION_MESSAGE.TITLE_BUTTON; 
   constructor(
     private subscriptionService: SubscriptionService, 
     private notificationService: NotificationService,

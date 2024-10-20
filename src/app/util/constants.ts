@@ -1,4 +1,5 @@
 import { TRANSLATIONS } from "@angular/core";
+import { constants } from "buffer";
 
 export const EMPTY_STRING = '';
 export const CLASS_NAME = {
@@ -25,3 +26,22 @@ export const PROFILE_LABELS = {
   export const SELECTED_TAD = {
     TRANSLATIONS: "transactions"
   };
+
+  export const MENU_LABELS = {
+    PROFILE: 'Perfil',
+    FUND: 'Fondos',
+    NOTIFICATIONS: 'Recibir Notificaciones',
+    EMAIL: 'EMAIL',
+    SMS: 'SMS'
+  }
+  export const FUND_LABELS = {
+    TITLE: 'Fondos',
+    FILTER: 'Filtrado por categoria',
+    NAME: 'Nombre',
+    MINIMUM_AMOUNT: 'Monto minimo',
+    CATEGORY: 'Categoría',
+    TYPE_FPV: 'FPV',
+    TYPE_FIC: 'FIC',
+    ERROR_GET_FUND: "Error al obtener los fondos",
+    SORT_BY_NAME: 'name'
+  }

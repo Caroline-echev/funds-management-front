@@ -1,4 +1,3 @@
-// src/app/components/fund-list/fund-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { FundResponse } from 'src/app/interfaces/fund';
 import { FundService } from 'src/app/services/fund.service';
@@ -6,7 +5,7 @@ import { NotificationService } from 'src/app/services/notification.service';
 import { EMPTY_STRING, FUND_LABELS } from 'src/app/util/constants';
 
 @Component({
-  selector: 'app-fund-list',
+  selector: 'app-fund',
   templateUrl: './fund.component.html',
   styleUrls: ['./fund.component.scss']
 })
@@ -15,7 +14,7 @@ export class FundComponent implements OnInit {
   isLoading = true;
   orderByName: boolean = true; 
   isAsc: boolean = true;       
-  category?: string = '';       
+  category: string = '';       
   isChecked = true;           
   filterByCategory: boolean = false; 
   notificationsEnabled: boolean = false;
@@ -30,15 +29,15 @@ export class FundComponent implements OnInit {
     });
   }
 
-  toggleSwitch(event: Event) {
-    this.isChecked = (event.target as HTMLInputElement).checked;
-    this.category = (this.isChecked ? this.labels.TYPE_FPV : this.labels.TYPE_FIC);
+  onFilterChange(isChecked: boolean): void {
+    this.filterByCategory = isChecked;
+    this.category = isChecked ? this.labels.TYPE_FPV : EMPTY_STRING;
     this.fetchFunds();
   }
 
-  toggleFilterByCategory(event: Event) {
-    this.filterByCategory = (event.target as HTMLInputElement).checked;
-    this.category = this.filterByCategory ? this.labels.TYPE_FPV : EMPTY_STRING;
+  onSwitchChange(isChecked: boolean): void {
+    this.isChecked = isChecked;
+    this.category = isChecked ? this.labels.TYPE_FPV : this.labels.TYPE_FIC;
     this.fetchFunds();
   }
 
@@ -70,5 +69,4 @@ export class FundComponent implements OnInit {
     this.isAsc = !this.isAsc;
     this.fetchFunds();
   }
-  
 }

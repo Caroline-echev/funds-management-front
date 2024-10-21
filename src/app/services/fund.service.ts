@@ -3,12 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FundResponse } from '../interfaces/fund';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FundService {
-  private apiUrl = 'http://localhost:8090/api/v1/funds/'; 
+  private apiUrl = environment.apiUrl + '/funds/'; 
 
   constructor(private http: HttpClient) { }
 

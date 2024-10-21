@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpErrorInterceptor } from './interceptor/http-error.interceptor';
 import { ToastModule } from './component/atoms/toast/toast.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,

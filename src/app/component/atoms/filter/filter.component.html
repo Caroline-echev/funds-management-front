@@ -1,0 +1,30 @@
+<div class="filter">
+  <div class="checkbox-wrapper-4">
+    <input 
+      class="inp-cbx" 
+      id="morning" 
+      type="checkbox" 
+      (change)="onToggleFilter($event)">
+    <label class="cbx" for="morning">
+      <span>
+        <svg width="12px" height="10px"></svg>
+      </span>
+      <span>{{labels.FILTER}}</span>
+    </label>
+    <svg class="inline-svg">
+      <symbol id="check-4" viewBox="0 0 12 10">
+        <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+      </symbol>
+    </svg>
+  </div>
+  
+  <div class="checkbox-wrapper-10" *ngIf="filterByCategory">
+    <input 
+      [checked]="isChecked" 
+      type="checkbox" 
+      id="cb5" 
+      class="tgl tgl-flip" 
+      (change)="onToggleSwitch($event)">
+    <label for="cb5" data-tg-on="FVP" data-tg-off="FIC" class="tgl-btn"></label>
+  </div>
+</div>

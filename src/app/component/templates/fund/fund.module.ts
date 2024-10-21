@@ -6,6 +6,7 @@ import { LoadingModule } from '../../atoms/loading/loading.module';
 import { OrderModule } from '../../atoms/order/order.module';
 import { ButtonModule } from '../../atoms/button/button.module';
 import { FormModule } from '../../molecules/form/form.module';
+import { FilterModule } from '../../atoms/filter/filter.module';
 
 @NgModule({
   declarations: [FundComponent],
@@ -15,7 +16,9 @@ import { FormModule } from '../../molecules/form/form.module';
     LoadingModule,
     OrderModule,
     ButtonModule,
-    FormModule
+    FormModule,
+    FilterModule
+  
   ]
   ,
   exports: [FundComponent]
